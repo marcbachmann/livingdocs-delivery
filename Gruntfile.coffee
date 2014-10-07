@@ -11,21 +11,33 @@ module.exports = (grunt) ->
         files:
           'assets/index.js': ['./client/index.coffee'],
 
-    copy:
-      dist:
-        files:
-          'assets/livingdocs_stream.css': 'client/livingdocs_stream.css'
-
     watch:
       changes:
         files: ['client/**/*']
-        tasks: ['default']
+        tasks: ['assets']
+
+    compass:
+      dist:
+        options:
+          sassDir: 'client/stylesheets/'
+          cssDir: 'assets/'
+          require: ['susy', 'breakpoint']
+
+    express:
+      dev:
+        options:
+          port: 8080
+          hostname: 'localhost'
+          open: true
+          server: './server'
 
 
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-browserify')
   grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-compass')
+  grunt.loadNpmTasks('grunt-express')
 
-  grunt.registerTask('default', ['assets', 'watch'])
-  grunt.registerTask('assets', ['browserify', 'copy'])
+  grunt.registerTask('default', ['express', 'watch'])
+  grunt.registerTask('assets', ['browserify', 'compass'])
 

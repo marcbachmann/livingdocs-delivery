@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/livingdocs_stream.css">
   <title>{{title | default('livingdocs-stream')}}</title>
+  <link rel="stylesheet" href="http://www.livingdocs-beta.io/designs/timeline/css/fixed_width_fluid/all.css">
   <meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
   </head>
-  <body class="container">
-
-    <header class="header">
+  <body>
+    <div class="header">
       <a class="site-logo" internal href="/">
         <img src="http://www.livingdocs.io/assets/images/livingdocs-logo-inverted-57e05e61.svg">
       </a>
-    </header>
-
+    </div>
     {% block content %}{% endblock %}
-
-    <footer class="footer">
-
-    </footer>
-
     <script type="text/javascript" src="/views.js"></script>
     <script type="text/javascript" src="/assets/index.js" async></script>
   </body>
