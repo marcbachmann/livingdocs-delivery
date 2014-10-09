@@ -16,6 +16,15 @@ module.exports = (grunt) ->
         files: ['client/**/*']
         tasks: ['assets']
 
+    copy:
+      dist:
+        files: [
+          expand: true
+          cwd: './client/images/'
+          src: ['**/*']
+          dest: 'assets/images/'
+        ]
+
     compass:
       dist:
         options:
@@ -39,5 +48,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-express')
 
   grunt.registerTask('default', ['express', 'watch'])
-  grunt.registerTask('assets', ['browserify', 'compass'])
+  grunt.registerTask('assets', ['browserify', 'compass', 'copy'])
 

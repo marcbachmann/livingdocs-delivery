@@ -1,0 +1,5 @@
+$medium-screen: 550px;
+$large-screen: 800px;
+$medium-screen-only: $medium-screen $large-screen;
+$medium-screens-or-smaller: max-width $large-screen;
+$small-screens: max-width $medium-screen;

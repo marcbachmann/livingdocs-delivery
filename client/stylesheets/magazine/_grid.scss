@@ -1,0 +1,21 @@
+// Body padding
+$body-padding: rhythm(1/2);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 $body-padding;
+  @if not $debug {
+    background-color: white;
+  }
+}
+
+.frontpage {
+  @extend .layout;
+}
+
+.layout {
+  @include container(994px);
+}

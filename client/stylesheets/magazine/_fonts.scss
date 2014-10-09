@@ -1,0 +1,12 @@
+body {
+  font-family: $font-serif;
+  color: $font-color;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  text-decoration: none;
+}

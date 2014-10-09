@@ -1,0 +1,27 @@
+.app
+  &__header
+    &--full
+      @extend .layout
+      padding: rhythm() 0
+
+    &--minimal
+      position: fixed
+      top: rhythm(1/2)
+      left: rhythm(1/2)
+      right: rhythm(1/2)
+      width: rhythm(1)
+
+      img
+        width: 100%
+
+
+  &__footer
+    @extend .layout
+    @include adjust-font-size-to(0.7rem)
+    min-height: rhythm(5)
+    padding: rhythm()
+    background-color: darken(white, 10%)
+    font-family: $font-sans-serif
+
+    main
+      color: darken(white, 30%)

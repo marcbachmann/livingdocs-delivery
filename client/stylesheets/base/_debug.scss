@@ -1,0 +1,19 @@
+// Show grid and vertical rhythm lines
+$debug: false;
+
+@if $debug {
+  // Let Susy show columns
+  $debug-options: (
+    debug: (
+      image: show-columns,
+      color: rgba(#336, 0.1),
+    ),
+  );
+
+  $susy: map-merge($susy, $debug-options) !global;
+
+  html {
+    $grid-background-baseline-color: #ddd;
+    @include debug-vertical-alignment();
+  }
+}

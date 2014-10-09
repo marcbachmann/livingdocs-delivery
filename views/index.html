@@ -5,18 +5,20 @@
   <title>{{title | default('livingdocs-stream')}}</title>
   <meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
   </head>
-  <body class="container">
+  <body>
 
-    <header class="header">
+    <header class="app__header app__header--full">
       <a class="site-logo" internal href="/">
-        <img src="http://www.livingdocs.io/assets/images/livingdocs-logo-inverted-57e05e61.svg">
+        <img src="/assets/images/livingdocs-small.png">
       </a>
     </header>
 
-    {% block content %}{% endblock %}
+    <main class="frontpage">
+      {% block content %}{% endblock %}
+    </main>
 
-    <footer class="footer">
-
+    <footer class="app__footer">
+      <main>© 2014 Upfront GmbH</main>
     </footer>
 
     <script type="text/javascript" src="/views.js"></script>

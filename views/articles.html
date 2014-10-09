@@ -3,11 +3,12 @@
 {% block content %}
 <ul class="teaser-list">
 {% for article in articles %}
-<li class="teaser-list-entry" style="background-image: url({{ article.teaserImage }})">
-  <a internal href="/articles/{{ article.articleId }}">
-    <h2>{{ article.title }}</h2>
-  </a>
-</li>
+  <li class="teaser" style="background-image: url({{ article.teaserImage }})">
+    <span class="teaser__label" doc-editable></span>
+    <a class="teaser__title" internal href="/articles/{{ article.articleId }}">
+      {{ article.title }}
+    </a>
+  </li>
 {% endfor %}
 </ul>
 {% endblock %}

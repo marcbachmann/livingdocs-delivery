@@ -1,0 +1,54 @@
+.teaser
+  $layout: 1 2 3
+  // @include gallery(4 of 12)
+  $sum: 0
+  $length: length($layout)
+  @for $i from 1 through $length
+    $row-size: nth($layout, $i)
+    @if $i == $length
+      @for $j from 0 to $row-size
+        $span: $columns / $row-size
+        $m: $sum + $j + 1
+        $start: 1 + $j * $span
+        @include span($span at $start)
+        &:nth-child(#{$row-size}n + #{$m})
+          @include span($span at $start)
+
+    @else
+      @for $j from 0 to $row-size
+        $span: $columns / $row-size
+        $n: $sum + $j + 1
+        $start: 1 + $j * $span
+        &:nth-child(#{$n})
+          @include span($span at $start)
+
+    $sum: $sum + $row-size
+
+  background-size: cover
+  background-position: center center
+  background-color: $livingdocs-color
+  margin-bottom: gutter()
+  display: table
+
+
+  &__title
+    @include adjust-font-size-to(1.3rem)
+    font-family: $font-sans-serif
+    font-weight: 600
+    color: white
+    text-shadow: 0 1px 3px rgba(#000, 0.3)
+    padding: rhythm()
+    display: table-cell
+    height: rhythm(10)
+    width: 100%
+    vertical-align: bottom
+    transition: background-color 1s
+    background-color: rgba(#000, 0.2)
+
+
+    &:hover
+      background-color: rgba(#000, 0)
+
+
+.teaser-list
+  list-style-type: none

@@ -1,0 +1,7 @@
+// See also: https://medium.com/typography/34fe2f1d2c02
+// Rhythm unit (Compass vertical rhythm).
+$rhythm-unit: "px"; // Use this for debug mode (vertical grid lines)
+//$rhythm-unit: "rem"; // You might want use this for build.
+
+// Baseline (Compass)
+$grid-background-baseline-color: #ddd;
